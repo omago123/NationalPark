@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<div class="text-center my-5">
+    <img class="img-fluid rounded-circle mb-4" src="https://pbs.twimg.com/media/DVT7yQBVQAAA6xj.jpg" alt="..." style=" width: 250px;"/>
+    <h1 class="text-white fs-3 fw-bolder">{{ region.region_name }}</h1>
+    <p class="text-white-50 mb-0"></p>
+</div>
+{% endblock %}
+
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="http://127.0.0.1:8000/park/home">HOME</a>
+        <a class="navbar-brand" href="http://127.0.0.1:8000/park/park_list/">공원</a>
+        <a class="navbar-brand" href="http://127.0.0.1:8000/loc/map/{{state.id}}">MAP</a>
+        <a class="navbar-brand" href="#!">CONTACT</a>
+    </div>
+</nav>
+{% endblock %}
+
+
+{% block context %}
+ <div>
+    {% for p in pList %}
+        <button class="btn btn-primary btn-block" id="signup" style="width: 500px; height: 50px; margin: 0 auto; background-color: gray; border-color: white;" 
+        onclick = "location.href = 'http://127.0.0.1:8000/park/park/{{p.id}}'">
+            {{p.park_name}} </button>
+    {% endfor %}
+ </div> 
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+ <!-- Content section-->
+ {% comment %} <form method="get" action="" class="form" style="margin-left: 7%; margin-top: 5%; margin-bottom: 5%">
+    <select name="region_name" id="region_id">
+      <option value="0" selected>지역 선택</option>
+      <option value="1">수도권</option>
+      <option value="2">경상도</option>
+      <option value="3">전라도</option>
+      <option value="4">충청도</option>
+      <option value="5">강원도</option>
+      <option value="6">제주도</option>
+    </select>
+  </form>
+
+    <div class="list-group">
+    {% for region in region_list %}
+        <a href='' class="list-group-item list-group-item-action">{{ region.region_name }}</a>
+    {% endfor %}
+    </div> {% endcomment %}
+  
+ {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+      $(document).ready(function() {
+          $( "select[name=region_name]" ).val( "{{ region_name_text }}" );
+          $('select[name=region_name]').change(function () {
+          console.log($('select[name=region_name]').val());
+          month = $('select[name=region_name]').val();
+          $('.form').submit();
+      });
+  });
+  </script> {% endcomment %}
