@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-
 from parkapp import views
 from locationApp import views
 
@@ -24,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('park/', include('parkapp.urls')),
     path('loc/', include('locationApp.urls')),
+    path('contact/', include('contact.urls')),
 ]
