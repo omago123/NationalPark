@@ -1,22 +1,22 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-import hashlib
 import smtplib
 from email.mime.text import MIMEText
 
 
-def send_mail(from_email, to_email, msg):
+def send_mail(to_email, from_email, msg):
     # SMTP 설정
-    smtp = smtplib.STMP_SSL('stmp.gmail.com', 587)
+    smtp = smtplib.SMTP('stmp.gmail.com', 587)
+    smtp.starttls()
     # 인증정보 설정
-    smtp.login(from_email, 'cofcuqsulcxfvjxu')
+    smtp.login(to_email, 'cofcuqsulcxfvjxu')
     msg = MIMEText(msg)
     # 제목
-    msg['Subject'] = '[문의사항]' + to_email
+    msg['Subject'] = '[문의사항]' + from_email
     # 수신 이메일
-    msg['To'] = from_email
-    smtp.sendmail(from_email, from_email, msg.as_string())
+    msg['To'] = to_email
+    smtp.sendmail(from_email, to_email, msg.as_string())
     smtp.quit()
 
     
