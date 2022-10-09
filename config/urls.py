@@ -17,10 +17,14 @@ from django.contrib import admin
 from django.urls import include, path
 from parkapp import views
 from locationApp import views
+from contact import views
+import config.views as views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.mainpage),
+
     path('park/', include('parkapp.urls')),
     path('loc/', include('locationApp.urls')),
     path('contact/', include('contact.urls')),
