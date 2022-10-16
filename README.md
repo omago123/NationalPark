@@ -37,8 +37,9 @@
 ![image](https://user-images.githubusercontent.com/108312272/196023749-1839cc62-f617-4da9-8519-cd886baba0ca.png)
 
 ## 문의사항 기능 구현 화면
-- 네비게이션 바의 CONTACT 버튼을 누르면 문의사항 화면으로 넘어온다
-![image](https://user-images.githubusercontent.com/108312272/196023783-1d1d241e-bf5c-43ef-b1c4-c423ba353239.png)
+- 네비게이션 바의 CONTACT 버튼을 누르면 문의사항을 입력할 수 있다.
+![콘택트구동1](https://user-images.githubusercontent.com/108378151/196024066-fc15cb58-0e5f-4ce2-9cfa-b8a614dab1c9.png)
 - 사용자의 이메일과 문의 내용을 입력한 후 발송을 누른다.
-![image](https://user-images.githubusercontent.com/108312272/196023982-543722d4-6dd3-4ef2-8b23-4bc18869ea95.png)
+![콘택트구동2](https://user-images.githubusercontent.com/108378151/196024081-c4b2e187-6450-4fe6-9121-ba29d990e2bf.png)
 - 관리자의 이메일로 문의사항이 전송된 것을 확인할 수 있다.
+![콘택트구동3](https://user-images.githubusercontent.com/108378151/196024089-317567d8-2e23-4cef-80c0-29585c3e2472.png)
